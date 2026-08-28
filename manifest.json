@@ -1,0 +1,10 @@
+{
+    "manifest_version": 3,
+    "version": "1.0",
+    "name": "Lead Tracker",
+    "description": "A simple leads tracking extension",
+    "action": {
+        "default_popup": "popup/popup.html",
+        "default_icon": "assets/icons/icon.png"
+    }
+}
