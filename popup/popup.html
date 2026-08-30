@@ -9,20 +9,24 @@
     <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body>
-    <header id="main-header">
-        <h1 id="main-title">Track your leads</h1>
-    </header>
+    <div class="container">
+        <header id="main-header">
+            <h1 id="main-title">Track your leads</h1>
+        </header>
 
-    <main id="main-container">
-        <form action="">
-            <input type="text">
-            <button id="save-btn">SAVE INPUT</button>
-            <button id="save-tab-btn">SAVE TAB</button>
-            <button id="delete-btn">DELETE ALL</button>
-        </form>
+        <main id="main-container">
+            <form action="">
+                <input type="text">
+                <div>
+                    <button type="button" id="save-btn">SAVE INPUT</button>
+                    <button type="button" id="save-tab-btn">SAVE TAB</button>
+                    <button type="button" id="delete-btn">DELETE ALL</button>
+                </div>
+            </form>
 
-        <ul id="leads-list"></ul>
-    </main>
+            <ul id="leads-list"></ul>
+        </main>
+    </div>
 
      <!-- JS -->
     <script src="popup.js"></script>
