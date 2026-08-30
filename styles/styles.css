@@ -11,27 +11,19 @@ body {
 }
 
 .container {
+    text-align: center;
     width: 400px;
     background-color: #fefae0;
-    padding: 5px 10px;
+    padding: 5px 20px;
 }
 
-#main-header {
-    text-align: center;
-}
-
-
-form {
-    text-align: center;
-}
-
-form input[type="url"] {
+input[type="url"] {
     width: 100%;
     margin-bottom: 15px;
     padding: 10px;
     font-size: 16px;
-    border: 1px solid rgba(40, 54, 24);;
-    outline: none;
+    border: 1px solid rgba(40, 54, 24);
+    /* outline: none; */
     border-radius: 5px;
 }
 
@@ -47,8 +39,15 @@ form input[type="url"] {
     border: 0;
 }
 
+.button-group {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+}
+
 button {
-    background-color: rgba(40, 54, 24, 0.7);
+    background-color: rgba(40, 54, 24, 0.9);
     color: #fff;
     border: none;
     padding: 7px 14px;
@@ -59,13 +58,45 @@ button {
 }
 
 button:hover {
-    background-color: rgba(40, 54, 24, 0.9);
+    background-color: rgba(40, 54, 24, 0.8);
 }
 
 #delete-btn {
-    background-color: rgba(255, 0, 0, 0.7);
+    background-color: #AD0000;
 }
 
 #delete-btn:hover {
     background-color: rgba(255, 0, 0, 0.9);
+}
+
+/* Leads List */
+#leads-list {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;
+    text-align: left;
+    border: 1px solid #606c38;
+    border-radius: 5px;
+    padding: 10px;
+    background: #fff;
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+#leads-list li {
+    margin-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 10px;
+    background: #283618;
+    overflow-wrap: break-word; 
+}
+
+#leads-list li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#leads-list li a:hover {
+    text-decoration: underline;
 }
