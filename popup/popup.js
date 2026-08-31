@@ -1,6 +1,7 @@
 const urlInput = document.querySelector("#url-input")
 const leadsList = document.querySelector("#leads-list")
 const saveInputBtn = document.querySelector("#save-btn")
+const saveTabBtn = document.querySelector("#save-tab-btn")
 let leads = []
 
 // Fetch the leads from the localStorage
@@ -57,3 +58,32 @@ function renderLeads(leads) {
 
     leadsList.innerHTML = leadsHTML
 }
+
+
+// Save Tab URL
+saveTabBtn.addEventListener("click", () => {
+    chrome.tabs.query(
+        {active: true, currentWindow: true},
+        (tabs) => {
+            if (!tabs || tabs.length === 0) return;
+
+            let tabUrl = tabs[0].url
+
+            // If the tab url is already added
+            if (leads.includes(tabUrl)) {
+                alert("This tab URL has already added to the list.")
+                return
+            }
+
+            // Add the tab url to the leads array
+            leads.push(tabUrl)
+
+
+            // Update the localStorage
+            localStorage.setItem("leads", JSON.stringify(leads))
+
+            // Render the leads
+            renderLeads(leads)
+        }
+    )
+})
