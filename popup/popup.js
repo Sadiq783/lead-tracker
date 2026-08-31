@@ -2,6 +2,7 @@ const urlInput = document.querySelector("#url-input")
 const leadsList = document.querySelector("#leads-list")
 const saveInputBtn = document.querySelector("#save-btn")
 const saveTabBtn = document.querySelector("#save-tab-btn")
+const deleteBtn = document.querySelector("#delete-btn")
 let leads = []
 
 // Fetch the leads from the localStorage
@@ -87,3 +88,24 @@ saveTabBtn.addEventListener("click", () => {
         }
     )
 })
+
+
+// Delete all leads
+deleteBtn.addEventListener("dblclick", () => {
+    const isConfirmed = window.confirm("Are you sure you want to permanently delete all saved leads? This action cannot be undone.")
+
+    if (isConfirmed) {
+        // Clear out localStorage
+        localStorage.clear()
+
+        // Reset the leads array
+        leads = []
+
+        // Clear the UI
+        leadsList.innerHTML = ""
+        leadsList.style.backgroundColor = "transparent"
+        leadsList.style.padding = "0"
+        leadsList.style.border = "none"
+    }
+})
+
