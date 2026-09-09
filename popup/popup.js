@@ -92,6 +92,11 @@ saveTabBtn.addEventListener("click", () => {
 
 // Delete all leads
 deleteBtn.addEventListener("dblclick", () => {
+    // If there are no leads already
+    if (!localStorage.getItem("leads")) {
+        return
+    }
+    
     const isConfirmed = window.confirm("Are you sure you want to permanently delete all saved leads? This action cannot be undone.")
 
     if (isConfirmed) {
